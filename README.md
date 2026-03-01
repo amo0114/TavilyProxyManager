@@ -35,6 +35,10 @@
 
 直接使用 GHCR 镜像部署，**无需本地编译**。
 
+> 当前仓库的镜像由 `.github/workflows/docker-publish.yml` 构建并推送到 `ghcr.io/amo0114/tavilyproxymanager`：  
+> - `push main` 时发布 `latest`  
+> - `push v*` Tag 时发布对应语义化版本标签（如 `v1.2.3`、`1.2`）
+
 ### 1. 使用 Docker Compose (推荐)
 
 创建 `docker-compose.yml` 文件：
@@ -43,7 +47,7 @@
 version: "3.8"
 services:
   tavily-proxy:
-    image: ghcr.io/xuncv/tavilyproxymanager:latest
+    image: ghcr.io/amo0114/tavilyproxymanager:latest
     container_name: tavily-proxy
     ports:
       - "8080:8080"
@@ -72,7 +76,7 @@ docker run -d \
   -p 8080:8080 \
   -v $(pwd)/data:/app/data \
   -e DATABASE_PATH=/app/data/proxy.db \
-  ghcr.io/xuncv/tavilyproxymanager:latest
+  ghcr.io/amo0114/tavilyproxymanager:latest
 ```
 
 ---

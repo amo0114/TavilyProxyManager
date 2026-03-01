@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   tavily-proxy:
-    image: ghcr.io/xuncv/tavilyproxymanager:latest
+    image: ghcr.io/amo0114/tavilyproxymanager:latest
     ports:
       - "8080:8080"
     environment:

@@ -35,6 +35,10 @@ A transparent reverse proxy for the Tavily API that aggregates multiple Tavily A
 
 Deploy directly using the GHCR image, **no local compilation required**.
 
+> For this repository, the image is built by `.github/workflows/docker-publish.yml` and pushed to `ghcr.io/amo0114/tavilyproxymanager`:  
+> - `push main` publishes `latest`  
+> - `push v*` tag publishes semantic version tags (for example `v1.2.3`, `1.2`)
+
 ### 1. Using Docker Compose (Recommended)
 
 Create a `docker-compose.yml` file:
@@ -43,7 +47,7 @@ Create a `docker-compose.yml` file:
 version: "3.8"
 services:
   tavily-proxy:
-    image: ghcr.io/xuncv/tavilyproxymanager:main
+    image: ghcr.io/amo0114/tavilyproxymanager:latest
     container_name: tavily-proxy
     ports:
       - "8080:8080"
@@ -72,7 +76,7 @@ docker run -d \
   -p 8080:8080 \
   -v $(pwd)/data:/app/data \
   -e DATABASE_PATH=/app/data/proxy.db \
-  ghcr.io/xuncv/tavilyproxymanager:main
+  ghcr.io/amo0114/tavilyproxymanager:latest
 ```
 
 ---
