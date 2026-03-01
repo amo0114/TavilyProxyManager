@@ -118,6 +118,12 @@ docker logs tavily-proxy 2>&1 | grep "master key"
 docker build -t my-tavily-proxy .
 ```
 
+**构建 ARM64 镜像**:
+
+```bash
+docker buildx build --platform linux/arm64 -t my-tavily-proxy:arm64 .
+```
+
 ---
 
 ## 📖 使用指南

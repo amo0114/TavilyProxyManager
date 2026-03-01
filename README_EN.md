@@ -118,6 +118,12 @@ If you need to modify the code and build it yourself:
 docker build -t my-tavily-proxy .
 ```
 
+**Build an ARM64 image**:
+
+```bash
+docker buildx build --platform linux/arm64 -t my-tavily-proxy:arm64 .
+```
+
 ---
 
 ## 📖 Usage Guide
